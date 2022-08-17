@@ -7,7 +7,9 @@ import java.util.stream.Collectors;
 import com.example.demo.Taco;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.Errors;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
@@ -47,10 +49,20 @@ public class DesignTacoController {
 
         return "design";
     }
-
+/*
     @PostMapping
-    public String processDesing(/*Design design*/){
-        log.info("Process design: ");
+    public String processDesing(Design design){
+        log.info("Process design: " + design);
+        return "redirect:/orders/current";
+    }
+*/
+    @PostMapping
+    public String processDesign(@ModelAttribute("design") Taco design, Errors errors, Model model){
+
+        if (errors.hasErrors())
+            return "design";
+
+        log.info("Process design: " + design);
         return "redirect:/orders/current";
     }
 
