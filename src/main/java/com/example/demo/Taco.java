@@ -1,9 +1,15 @@
 package com.example.demo;
+
 import java.util.List;
+
+import javax.validation.constraints.NotNull;
+
 import lombok.Data;
 
 @Data
 public class Taco {
-private String name;
-private List<String> ingredients;
+
+    @NotNull
+    private String name;
+    private List<String> ingredients;
 }
