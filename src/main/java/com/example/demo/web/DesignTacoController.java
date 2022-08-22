@@ -18,6 +18,8 @@ import lombok.extern.slf4j.Slf4j;
 import com.example.demo.Ingredient;
 import com.example.demo.Ingredient.Type;
 
+import javax.validation.Valid;
+
 
 @Slf4j
 @Controller
@@ -56,8 +58,9 @@ public class DesignTacoController {
         return "redirect:/orders/current";
     }
 */
+
     @PostMapping
-    public String processDesign(@ModelAttribute("design") Taco design, Errors errors, Model model){
+    public String processDesign(@Valid @ModelAttribute("design") Taco design, Errors errors /*, Model model*/){
 
         if (errors.hasErrors())
             return "design";
