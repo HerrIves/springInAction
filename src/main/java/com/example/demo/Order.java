@@ -8,8 +8,12 @@ import javax.validation.constraints.Pattern;
 
 import org.hibernate.validator.constraints.CreditCardNumber;
 
+import java.util.Date;
+
 @Data
 public class Order {
+    private Long id;
+    private Date placedAt;
     @NotBlank(message = "name is requaired")
     private String name;
     @NotBlank(message = "street is requaired")

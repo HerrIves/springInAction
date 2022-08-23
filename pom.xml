@@ -40,7 +40,6 @@
         </dependency>
 
 
-
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-thymeleaf</artifactId>
@@ -79,6 +78,12 @@
             <artifactId>spring-boot-starter-actuator</artifactId>
         </dependency>
 
+        <!-- https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-jdbc -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-jdbc</artifactId>
+            <version>1.5.22.RELEASE</version>
+        </dependency>
 
 
         <dependency>
@@ -90,8 +95,10 @@
     <build>
         <plugins>
             <plugin>
+                <!-- https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-maven-plugin -->
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
+                <version>1.5.22.RELEASE</version>
             </plugin>
         </plugins>
     </build>

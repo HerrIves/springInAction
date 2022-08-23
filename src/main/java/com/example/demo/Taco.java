@@ -1,5 +1,6 @@
 package com.example.demo;
 
+import java.util.Date;
 import java.util.List;
 
 import javax.validation.constraints.NotNull;
@@ -12,6 +13,9 @@ public class Taco {
 
     @NotNull
     @Size(min=5, message="Name must be at least 5 characters long")
+    private Long id;
+    private Date createdAt;
     private String name;
     private List<String> ingredients;
+
 }
