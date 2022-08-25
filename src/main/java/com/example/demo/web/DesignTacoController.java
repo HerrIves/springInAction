@@ -56,13 +56,13 @@ public class DesignTacoController {
             model.addAttribute(type.toString().toLowerCase(),
                     filterByType(ingredients, type));
         }
-//        model.addAttribute("design", new Taco());
+        model.addAttribute("design", new Taco());
 
         return "design";
     }
 
     @PostMapping
-    public String processDesign(@Valid @ModelAttribute("design") Taco design, Errors errors){
+    public String processDesign(/*@Valid*/ @ModelAttribute("design") Taco design, Errors errors){
 
         if (errors.hasErrors())
             return "design";
