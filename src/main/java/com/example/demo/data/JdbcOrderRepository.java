@@ -8,10 +8,7 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.simple.SimpleJdbcInsert;
 import org.springframework.stereotype.Repository;
 
-import java.util.Date;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 @Repository
 public class JdbcOrderRepository implements OrderRepository {
@@ -45,7 +42,7 @@ public class JdbcOrderRepository implements OrderRepository {
     }
 
     private long saveOrderDetails(Order order) {
-        @SuppressWarnings("unchcked")
+        @SuppressWarnings("unchecked")
         Map<String, Object> values =
                 objectMapper.convertValue(order, Map.class);
         values.put("placedAt", order.getPlacedAt());
